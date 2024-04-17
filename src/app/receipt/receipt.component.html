@@ -1,0 +1,20 @@
+<div class="container receipt">
+  <div style="text-align: center;">
+    <h2>Gatha Swimming Club</h2>
+    <h6>Sr.No 28/1A, Near Jambhulwadi Lake,Haveli, Pune-Amebegaon Khurd(Part)(N.V) 411046</h6>
+    <h6>Ph No 9545479191/8390709191</h6>
+    <h2>{{ selectedService ? selectedService : 'General ' }} Receipt</h2>
+  </div>
+   
+  <hr/>
+  <p *ngIf="userName"><strong>User Name: </strong> {{ userName }}</p>
+  <p *ngIf="selectedService"><strong>Services: </strong> {{ selectedService }}</p>
+  <p *ngIf="selectedClothing"><strong>Cloths: </strong> {{ selectedClothing }}</p>
+  <p *ngIf="selectedQuantity !== 0 && selectedClothing"><strong>Quantity: </strong> {{ selectedQuantity }}</p>
+  <p *ngIf="inTime"><strong>In Time: </strong> {{ inTime }}</p>
+  <p *ngIf="outTime"><strong>Out Time: </strong> {{ outTime }}</p>
+  <p *ngIf="totalCost"><strong>Total Cost: </strong> {{ totalCost }}</p>
+  <p *ngIf="printedAt"><strong>Printed At: </strong> {{ printedAt }}</p>
+ 
+  <button class="btn btn-primary no-print" (click)="printReceipt()">Print Receipt</button>
+</div>

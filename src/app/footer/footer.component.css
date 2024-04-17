@@ -1,0 +1,16 @@
+/* footer.component.css */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 20px;
+    padding-top: 20px;
+    text-align: center;
+  }
+  @media print {
+    /* Hide the content when printing */
+    .no-print {
+      display: none !important;
+    }
+  }
+  

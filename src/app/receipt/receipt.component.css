@@ -1,0 +1,14 @@
+.receipt {
+    width: 500px; /* Set the width of the receipt */
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: auto;
+  }
+  
+  @media print {
+    /* Hide the print button when printing */
+    .no-print {
+      display: none !important;
+    }
+  }
+  

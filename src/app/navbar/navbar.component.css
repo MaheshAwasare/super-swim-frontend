@@ -1,0 +1,65 @@
+/* Default styles for navbar */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px; /* Reduce vertical padding */
+  margin-bottom: 30px; 
+}
+
+.navbar-brand img {
+  width: 60px; /* Reduce the width of the logo */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.navbar-toggler {
+  border-color: #fff; /* Color of the navbar toggler */
+}
+
+.navbar-toggler-icon {
+  background-color: #151414; /* Color of the toggler icon */
+}
+
+.navbar-nav .nav-link {
+  font-size: 14px; /* Reduce font size of nav links */
+}
+.navbar-nav ul {
+  list-style: none; /* Remove default list-style */
+}
+
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between; /* Distribute menu items evenly */
+}
+
+.menu li {
+  cursor: pointer;
+  list-style: none;
+}
+
+.menu li:hover {
+  text-decoration: underline;
+}
+
+.active {
+  font-weight: bold;
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 600px) {
+  .menu {
+    flex-direction: column; /* Display menu items vertically on small screens */
+    align-items: center; /* Center align menu items */
+  }
+
+  .menu li {
+    margin: 5px 0; /* Add spacing between menu items */
+    list-style: none;
+  }
+}
+
+.navbar-nav .nav-link {
+  color: #fdf7f7;
+  font-weight: bolder; /* Change the color of the menu text */
+}

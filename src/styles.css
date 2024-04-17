@@ -1,0 +1,7 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+body{
+   /* background-image: url('assets/Designer.png');
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    background-color: rgb(216, 232, 232);
+}

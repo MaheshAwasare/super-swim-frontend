@@ -1,0 +1,116 @@
+<div class="container mt-10">
+<!-- Search Bar -->
+<div class="input-group mb-3 mt-3">
+    <input type="text" class="form-control custom-search" placeholder="Search" [(ngModel)]="searchQuery" (input)="search()">
+    
+  </div>
+  
+  <div *ngIf="showResults">
+    <div class="row">
+      <div class="col-md-3 mb-2" *ngFor="let action of searchResults">
+        <!-- Render search result cards -->
+        <div class="card custom-card">
+          <div class="card-header custom-card-header">
+            <h5 class="card-title">{{ action.title }}</h5>
+          </div>
+          <div class="card-body custom-card-body">
+            <p class="card-text">{{ action.description }}</p>
+            <a class="btn custom-btn" href="{{ action.action }}">{{ action.title }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <!-- Cards -->
+<div *ngIf="!showResults">
+        <!-- Include your existing HTML code to display all actions here -->
+      
+  <!-- Daily Actions -->
+<div class="row">
+    <div class="col-md-12">
+      <hr>
+      <h3 class="section-title">Daily Actions</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-2" *ngFor="let action of dailyActions">
+      <div class="card custom-card">
+        <div class="card-header custom-card-header">
+          <h5 class="card-title">{{ action.title }}</h5>
+        </div>
+        <div class="card-body custom-card-body">
+          <p class="card-text">{{ action.description }}</p>
+          <a class="btn custom-btn" href="{{ action.action }}">{{ action.title }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Subscriber-related Actions -->
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+      <h3 class="section-title">Subscriber-related Actions</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-2" *ngFor="let action of subscriberActions">
+      <div class="card custom-card">
+        <div class="card-header custom-card-header">
+          <h5 class="card-title">{{ action.title }}</h5>
+        </div>
+        <div class="card-body custom-card-body">
+          <p class="card-text">{{ action.description }}</p>
+          <a class="btn custom-btn" href="{{ action.action }}">{{ action.title }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Merchandise-related Actions -->
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+      <h3 class="section-title">Merchandise-related Actions</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-2" *ngFor="let action of merchandiseActions">
+      <div class="card custom-card">
+        <div class="card-header custom-card-header">
+          <h5 class="card-title">{{ action.title }}</h5>
+        </div>
+        <div class="card-body custom-card-body">
+          <p class="card-text">{{ action.description }}</p>
+          <a class="btn custom-btn" href="{{ action.action }}">{{ action.title }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- General Admin Actions -->
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+      <h3 class="section-title">General Admin Actions</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-2" *ngFor="let action of adminActions">
+      <div class="card custom-card">
+        <div class="card-header custom-card-header">
+          <h5 class="card-title">{{ action.title }}</h5>
+        </div>
+        <div class="card-body custom-card-body">
+          <p class="card-text">{{ action.description }}</p>
+          <a class="btn custom-btn" href="{{ action.action }}">{{ action.title }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+      
+  </div>
+  

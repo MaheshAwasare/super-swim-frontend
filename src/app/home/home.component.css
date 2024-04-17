@@ -1,0 +1,51 @@
+.custom-card {
+    border: 1px solid #909394; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  }
+  
+  .custom-card-header {
+    background-color: #868989; /* Header background color */
+    color: #ffffff; /* Header text color */
+    border-top-left-radius: 8px; /* Rounded corners for top left and right */
+    border-top-right-radius: 8px;
+    padding: 10px 15px; /* Padding */
+  }
+  
+  .custom-card-body {
+    padding: 20px; /* Padding */
+  }
+  
+  .custom-btn {
+    background-color: #1b1702; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 8px 16px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .custom-btn:hover {
+    background-color: #1289ae; /* Button background color on hover */
+  }
+  
+  .card-actions {
+    padding: 10px;
+  }
+
+  .btn-card{
+    background-color: #17abd8;
+    margin-left:5px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+  
+  .custom-search {
+    box-shadow: 0px 0px 10px rgba(164, 234, 237, 0.1); /* Adjust the shadow properties as needed */
+}

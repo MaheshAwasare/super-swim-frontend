@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Mark Attendance</h2>
+    <form (ngSubmit)="submitAttendance()" #attendanceForm="ngForm">
+      <div class="mb-3">
+        <label for="userName" class="form-label">User Name</label>
+        <input type="text" class="form-control" id="userName" name="userName" [(ngModel)]="userName" required>
+      </div>
+      <div class="mb-3">
+        <label for="inTime" class="form-label">In Time</label>
+        <input type="time" class="form-control" id="inTime" name="inTime" [(ngModel)]="inTime" required>
+      </div>
+      <div class="mb-3">
+        <label for="duration" class="form-label">Duration</label>
+        <select class="form-select" id="duration" name="duration" [(ngModel)]="duration" required>
+          <option value="30">30 mins</option>
+          <option value="60">1 hour</option>
+          <option value="120">2 hours</option>
+          <option value="180">3 hours</option>
+          <option value="240">4 hours</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  

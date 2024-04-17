@@ -1,0 +1,18 @@
+<div class="login-container">
+    <h2>Welcome!</h2>
+    <img src="assets/pool-icon.png" alt="Pool Icon" class="pool-icon">
+    <h2>Super Swim App</h2>
+    <form (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+      </div>
+      <button type="submit">Dive In!</button>
+    </form>
+    <!-- Display error message if present -->
+    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+</div>
