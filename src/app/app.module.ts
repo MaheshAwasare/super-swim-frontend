@@ -15,7 +15,7 @@ import { MarkAttendanceComponent } from './mark-attendance/mark-attendance.compo
 import { ReceiptComponent } from './receipt/receipt.component';
 import { QuickReceiptComponent } from './quick-receipt/quick-receipt.component';
 import { ServiceConfigComponent } from './service-config/service-config.component';
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +36,7 @@ import { ServiceConfigComponent } from './service-config/service-config.componen
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
