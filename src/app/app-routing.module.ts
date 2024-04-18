@@ -10,7 +10,7 @@ import { ServiceConfigComponent } from './service-config/service-config.componen
 import { QuickReceiptComponent } from './quick-receipt/quick-receipt.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirect to login page by default
+  { path: '', redirectTo: '/quick-receipt', pathMatch: 'full' }, // Redirect to login page by default
   { path: 'login', component: LoginComponent }, // Login route
   { path: 'home', component: HomeComponent }, // Home route
   { path: 'logout', component: LogoutComponent }, // Logout route
