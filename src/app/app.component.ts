@@ -8,7 +8,7 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   title = 'super-swim-frontend';
-  isLoggedIn: boolean = false // Initialize isLoggedIn to false
+  isLoggedIn: boolean = true // Initialize isLoggedIn to false
   ngOnInit() {
     this.checkLogin(); // Call someMethod to check if user is logged in
   };
