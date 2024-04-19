@@ -17,7 +17,7 @@ export class QuickReceiptComponent {
   selectedQuantity: number = 0;
   paymentMode: string ="Cash"
   quantityOptions: number[] = [0, ...Array.from({ length: 20 }, (_, i) => i + 1)];
-
+  receiptNumber : string = "";
   // Sample services and clothing options with associated costs
   services = [
     { label: 'Basic Coaching', value: 'Basic Coaching', cost: 100 },
@@ -34,6 +34,43 @@ export class QuickReceiptComponent {
     { label: 'Gents Costume 1', value: 'Ladies Costume4', cost: 250 },
     // Add more clothing options here
   ];
+
+  private generatedNumbers: Set<string> = new Set<string>();
+
+  generateSequenceNumber(coachingType: string): string {
+    let prefix = '';
+    let startNumber = 0;
+    console.log('coachingType '+ coachingType)
+    switch (coachingType) {
+      case 'One Day Pass':
+        prefix = 'G1';
+        startNumber = 10000;
+        break;
+      case 'Advanced Coaching':
+        prefix = 'A1';
+        startNumber = 20000;
+        break;
+      case 'Competitive Batch':
+        prefix = 'C1';
+        startNumber = 30000;
+        break;
+      case 'Basic Coaching':
+        prefix = 'B1';
+        startNumber = 40000;
+        break;
+      default:
+        throw new Error('Invalid coaching type');
+    }
+
+    let sequenceNumber: string;
+    
+      const randomNumber = Math.floor(Math.random() * 10000) + 1; // Generate a 4-digit random number
+      sequenceNumber = `${prefix}-${(startNumber + randomNumber).toString().padStart(6, '0')}`;
+   
+
+    this.generatedNumbers.add(sequenceNumber);
+    return sequenceNumber;
+  }
 
   constructor( private router: Router) { }
 
@@ -74,13 +111,17 @@ export class QuickReceiptComponent {
 
   printReceipt() {
     // Construct receipt data to be sent to backend API
+    console.log(this.selectedService);
+    this.receiptNumber = this.generateSequenceNumber(this.selectedService);
+    
     const receiptData = {
       username: this.username,
       selectedService: this.selectedService,
       selectedClothing: this.selectedClothing,
       batchInTime: this.batchInTime,
       batchOutTime: this.batchOutTime,
-      totalCost: this.totalCost
+      totalCost: this.totalCost,
+      receiptNumber: this.generateSequenceNumber(this.selectedService)
     };
     
     // Send receipt data to backend API (HTTP POST request)
@@ -90,7 +131,7 @@ export class QuickReceiptComponent {
 
      this.router.navigate(['/receipt'], { queryParams: { userName: this.username, inTime: this.batchInTime,
        outTime: this.batchOutTime, selectedService: this.selectedService,selectedClothing: this.selectedClothing,
-       selectedQuantity: this.selectedQuantity, totalCost :this.totalCost , paymentMode: this.paymentMode} });
+       selectedQuantity: this.selectedQuantity, totalCost :this.totalCost , paymentMode: this.paymentMode,receiptNumber: this.receiptNumber} });
     
   }
 }

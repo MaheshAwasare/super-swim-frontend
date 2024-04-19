@@ -7,6 +7,11 @@
   </div>
    
   <hr/>
+  
+  <!-- Arrange receipt number on the right side -->
+  <p class="receipt-number" *ngIf="receiptNumber"><strong>Receipt Number: </strong> {{ receiptNumber }}</p>
+  
+  <!-- Other receipt details -->
   <p *ngIf="userName"><strong>User Name: </strong> {{ userName }}</p>
   <p *ngIf="selectedService"><strong>Services: </strong> {{ selectedService }}</p>
   <p *ngIf="selectedClothing"><strong>Cloths: </strong> {{ selectedClothing }}</p>
