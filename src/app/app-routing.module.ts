@@ -10,7 +10,7 @@ import { ServiceConfigComponent } from './service-config/service-config.componen
 import { QuickReceiptComponent } from './quick-receipt/quick-receipt.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/quick-receipt', pathMatch: 'full' }, // Redirect to login page by default
+  { path: '', redirectTo: '/quick-receipt', pathMatch: 'full' }, // Redirect to quick receipt page by default
   { path: 'login', component: LoginComponent }, // Login route
   { path: 'home', component: HomeComponent }, // Home route
   { path: 'logout', component: LogoutComponent }, // Logout route
@@ -18,8 +18,9 @@ const routes: Routes = [
   { path: 'mark-attendance', component: MarkAttendanceComponent },
   { path: 'service-config', component: ServiceConfigComponent },
   { path: 'quick-receipt', component: QuickReceiptComponent },
-  { path: 'receipt', component: ReceiptComponent } // Register new user route
+  { path: 'receipt', component: ReceiptComponent } // Receipt route
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
