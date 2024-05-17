@@ -18,6 +18,7 @@ export class ReceiptComponent implements OnInit {
   totalCost=""
   paymentMode=""
   receiptNumber:string = "";
+  selectedPeople:string = "";
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -34,6 +35,7 @@ export class ReceiptComponent implements OnInit {
       const currentDate = new Date();
       this.printedAt = currentDate.toLocaleString();
       this.receiptNumber = params['receiptNumber']
+      this.selectedPeople = params['selectedPeople']
     });
   }
 

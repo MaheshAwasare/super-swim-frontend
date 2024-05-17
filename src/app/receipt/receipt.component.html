@@ -13,6 +13,7 @@
   
   <!-- Other receipt details -->
   <p *ngIf="userName"><strong>User Name: </strong> {{ userName }}</p>
+  <p *ngIf="selectedPeople"><strong>Number of People </strong> {{ selectedPeople }}</p>
   <p *ngIf="selectedService"><strong>Services: </strong> {{ selectedService }}</p>
   <p *ngIf="selectedClothing"><strong>Cloths: </strong> {{ selectedClothing }}</p>
   <p *ngIf="selectedQuantity !== 0 && selectedClothing"><strong>Quantity: </strong> {{ selectedQuantity }}</p>

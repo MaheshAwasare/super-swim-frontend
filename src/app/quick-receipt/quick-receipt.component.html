@@ -5,7 +5,10 @@
         <label for="username" class="form-label">Customer Name</label>
         <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username" required>
     </div>
-    
+    <div class="form-group mb-3">
+        <label for="numberOfPeople" class="form-label">Number of People</label>
+        <input type="number" class="form-control" id="numberOfPeople" name="numberOfPeople" [(ngModel)]="selectedPeople" (change)="calculateTotal()" min="1" max="20" required>
+    </div>
     <!-- <div class="form-group mb-3">
         <label for="services" class="form-label">Select Service</label>
         <select class="form-select" id="services" name="services" [(ngModel)]="selectedService" (change)="calculateTotal()">

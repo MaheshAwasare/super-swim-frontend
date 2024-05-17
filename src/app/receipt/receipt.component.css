@@ -11,4 +11,16 @@
       display: none !important;
     }
   }
+
+  .container.receipt {
+    position: relative;
+  }
+  
+  .receipt-number {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px; /* Optional: Adjust margin as needed */
+  }
+  
   

@@ -34,6 +34,8 @@ export class QuickReceiptComponent {
   // Receipt number
   receiptNumber : string = "";
 
+  selectedPeople : number = 1;
+
   // Sample services and clothing options with associated costs
   services = [
     { label: 'Basic Coaching', value: 'Basic Coaching', cost: 100 },
@@ -104,7 +106,7 @@ export class QuickReceiptComponent {
     const clothingCost = this.clothing.find(cloth => cloth.value === this.selectedClothing)?.cost || 0;
 
     // Calculate the total cost based on the selected quantity
-    const totalCost = serviceCost + (clothingCost * this.selectedQuantity);
+    const totalCost = (serviceCost + (clothingCost * this.selectedQuantity))*this.selectedPeople;
 
     // Update the total cost
     this.totalCost = totalCost;
@@ -147,7 +149,8 @@ export class QuickReceiptComponent {
       batchInTime: this.batchInTime,
       batchOutTime: this.batchOutTime,
       totalCost: this.totalCost,
-      receiptNumber: this.receiptNumber
+      receiptNumber: this.receiptNumber,
+      selectedPeople:  this.selectedPeople
     };
     
     // Send the receipt data to the backend API (HTTP POST request)
@@ -155,7 +158,7 @@ export class QuickReceiptComponent {
      // Apply CSS styles for printing
      document.body.classList.add('print-mode');
 
-     this.router.navigate(['/receipt'], { queryParams: { userName: this.username, inTime: this.batchInTime,
+     this.router.navigate(['/receipt'], { queryParams: { userName: this.username,selectedPeople:this.selectedPeople, inTime: this.batchInTime,
        outTime: this.batchOutTime, selectedService: this.selectedService,selectedClothing: this.selectedClothing,
        selectedQuantity: this.selectedQuantity, totalCost :this.totalCost , paymentMode: this.paymentMode,receiptNumber: this.receiptNumber} });
     
